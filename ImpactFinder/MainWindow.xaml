@@ -1,0 +1,28 @@
+﻿<Window x:Class="ImpactFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImpactFinder"
+        mc:Ignorable="d"
+        Title="영향성 검색기" Height="500" Width="525">
+    <Grid>
+        <Button x:Name="button" Content="찾기" HorizontalAlignment="Left" Height="21" Margin="410,26,0,0" VerticalAlignment="Top" Width="32" Click="button_Click"/>
+        <TextBox x:Name="FolderPathTextBox" HorizontalAlignment="Left" Height="21" Margin="80,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323"/>
+        <Label x:Name="label" Content="경로" HorizontalAlignment="Left" Margin="24,24,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="텍스트" HorizontalAlignment="Left" Margin="24,87,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FindNameTextBox" HorizontalAlignment="Left" Height="21" Margin="80,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323"/>
+        <Button x:Name="FindFileButton" Content="검색" HorizontalAlignment="Left" Height="21" Margin="409,92,0,0" VerticalAlignment="Top" Width="32" Click="FindFileButton_Click"/>
+        <Label x:Name="label_Copy1" Content="확장자" HorizontalAlignment="Left" Margin="24,56,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ExtTextBox" HorizontalAlignment="Left" Height="21" Margin="80,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="318"/>
+        <Button x:Name="button_Copy1" Content="Export" HorizontalAlignment="Left" Height="21" Margin="445,92,0,0" VerticalAlignment="Top" Width="46" Click="button_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="302" Margin="24,140,0,0" VerticalAlignment="Top" Width="467" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=FILEPATH}"  Header="경로" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path=FILENAME}"  Header="파일명" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path=FINDTEXT}" Header="텍스트" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
